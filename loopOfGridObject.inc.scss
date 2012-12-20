@@ -1,7 +1,7 @@
 @mixin loopOfGridObject($namespace) {
 	//LoopOfGrid
 	// $maxColumnCount 
-	// 		Limit the max number of grid, use it number over this value, generate only padding and margin
+	// 		Limit the length of grid column, using number over this value, generate only padding and margin
 	// 		Example : one column of 23/24 width + 1/48 margin + 1/48 margin = 24/24;
 	$maxColumnCount : 24;
 
@@ -14,32 +14,27 @@
 					}
 		 		}
 	 		}
-			//GRID Padding
-			//left
+
 	  		@for $i from 1 through $gridlength - 1 {
+
+	  			$value : ((100% / $gridlength) * $i)
+
 				%pd-left#{$i}of#{$gridlength}--#{$namespace} {
-					padding-left: ((100% / $gridlength) * $i);
+					padding-left: $value;
 				}
-			}
-			//right
-			@for $i from 1 through $gridlength - 1 {
+
 				%pd-right#{$i}of#{$gridlength}--#{$namespace} {
-					padding-right: ((100% / $gridlength) * $i);
+					padding-right: $value;
 				}
-			}
-			//GRID Margin
-			//left
-			@for $i from 1 through $gridlength - 1 {
+
 				%mg-left#{$i}of#{$gridlength}--#{$namespace} {
-					margin-left: ((100% / $gridlength) * $i);
+					margin-left: $value;
 				}
-			}		
-			//right
-			@for $i from 1 through $gridlength - 1 {
+
 				%mg-right#{$i}of#{$gridlength}--#{$namespace} {
-					margin-right: ((100% / $gridlength) * $i);
-				}
-			}
+					margin-left: $value;
+				}				
+			}	
 		}
 
 	//Position
