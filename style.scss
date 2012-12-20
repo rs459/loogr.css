@@ -1,0 +1,72 @@
+	
+
+	@import "vars.inc";
+	@import "normalize.inc";
+
+/*
+ * Start of style
+ */
+
+ 	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+	@import "respondTo.inc";
+	@import "loopOfGridObject.inc";
+	@import "typo.inc";
+	@import "linkAndButton.inc";
+	@import "form.inc";
+
+/*
+ *	loopOfGridObject without media queries 
+ */
+
+@include loopOfGridObject(all);
+
+/*
+ *	Owner stylesheet
+ */
+
+$max-width : 1280px;
+$max-width : 0 !default;
+.main-wrapper {
+	@if $max-width > 0  {
+		max-width : $max-width;
+	}
+}
+
+.container,%container {
+
+	@extend %cf--all;
+}
+
+/*
+ *	Result of loopOfGridObject
+ */
+	@media screen and (max-width: 480px) {
+		$namespace : "under480";  
+	  		
+	  		@include loopOfGridObject($namespace);
+	}
+
+	@media screen and (min-width: 481px) and (max-width: 768px) {
+		$namespace : "min480-max768";
+
+			@include loopOfGridObject($namespace);
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1024px) {
+		$namespace : "min768-max1024";
+
+			@include loopOfGridObject($namespace);
+	}
+
+	@media screen and (min-width: 1025px) {
+		$namespace : "over1024";
+
+			@include loopOfGridObject($namespace);
+	}
+/*
+ *  End of owner stylesheet
+ */
+	
+	@import "h5bp-css-print-after.inc";

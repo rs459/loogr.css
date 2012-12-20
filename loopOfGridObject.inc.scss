@@ -1,0 +1,247 @@
+@mixin loopOfGridObject($namespace) {
+	//LoopOfGrid
+	// $maxColumnCount 
+	// 		Limit the max number of grid, use it number over this value, generate only padding and margin
+	// 		Example : one column of 23/24 width + 1/48 margin + 1/48 margin = 24/24;
+	$maxColumnCount : 24;
+
+		@each $gridlength in 48, 40, 32, 24, 20, 16, 12, 10, 8, 6, 5, 4, 3 {
+			//GRID generator
+			@if $gridlength < $maxColumnCount {
+				@for $i from 1 through $gridlength {
+					%w#{$i}of#{$gridlength}--#{$namespace} {
+						width: ((100% / $gridlength) * $i);
+					}
+		 		}
+	 		}
+			//GRID Padding
+			//left
+	  		@for $i from 1 through $gridlength - 1 {
+				%pd-left#{$i}of#{$gridlength}--#{$namespace} {
+					padding-left: ((100% / $gridlength) * $i);
+				}
+			}
+			//right
+			@for $i from 1 through $gridlength - 1 {
+				%pd-right#{$i}of#{$gridlength}--#{$namespace} {
+					padding-right: ((100% / $gridlength) * $i);
+				}
+			}
+			//GRID Margin
+			//left
+			@for $i from 1 through $gridlength - 1 {
+				%mg-left#{$i}of#{$gridlength}--#{$namespace} {
+					margin-left: ((100% / $gridlength) * $i);
+				}
+			}		
+			//right
+			@for $i from 1 through $gridlength - 1 {
+				%mg-right#{$i}of#{$gridlength}--#{$namespace} {
+					margin-right: ((100% / $gridlength) * $i);
+				}
+			}
+		}
+
+	//Position
+		%pos-static--#{$namespace} {
+			position: static;
+		}
+		%pos-relative--#{$namespace} {
+			position: relative;
+		}
+		%pos-absolute--#{$namespace} {
+			position: absolute;
+		}
+		%pos-fixed--#{$namespace} {
+			position: fixed;
+		}
+
+	//Display
+		%display-block--#{$namespace} {
+			display: block;
+		}
+
+		%display-inline--#{$namespace} {
+			display: inline;
+		}
+
+		%display-inline-block--#{$namespace} {
+			display : inline-block;
+		}
+
+		%display-none--#{$namespace} {
+			display: none;
+		}
+
+		%display-table--#{$namespace} {
+			display: table;
+		}
+
+		%display-table-row--#{$namespace} {
+			display: table-row;
+		}
+
+		%display-table-cell--#{$namespace} {
+			display: table-cell;
+		}
+
+	//Float
+		%float-left--#{$namespace} {
+			float: left;
+		}
+
+		%float-right--#{$namespace} {
+			float: right;
+		}
+
+		%float-none--#{$namespace} {
+			float: none;
+		}
+
+	//Text-decoration
+		%text-decoration-underline--#{$namespace} {
+			text-decoration: underline;
+		}
+		%text-decoration-none--#{$namespace} {
+			text-decoration: none;
+		}
+
+	//Text-align
+		%text-align-center--#{$namespace} {
+			text-align: center;
+		}
+
+		%text-align-left--#{$namespace} {
+			text-align: left;
+		}
+
+		%text-align-right--#{$namespace} {
+			text-align: right;
+		}
+
+	//Vertical-align
+		%vertical-align-bottom--#{$namespace} {
+			vertical-align: bottom;
+		}
+		%vertical-align-middle--#{$namespace} {
+			vertical-align: middle;
+		}
+		%vertical-align-top--#{$namespace} {
+			vertical-align: top;
+		}
+		%vertical-align-baseline--#{$namespace} {
+			vertical-align: baseline;
+		}
+		%vertical-align-text-bottom--#{$namespace} {
+			vertical-align: text-bottom;
+		}
+		%vertical-align-text-top--#{$namespace} {
+			vertical-align: text-top;
+		}
+		%vertical-align-sub--#{$namespace} {
+			vertical-align: sub;
+		}
+		%vertical-align---#{$namespace} {
+			vertical-align: super;
+		}
+
+	//Padding
+		%no-mg-no-pd--#{$namespace} {
+			padding : 0;
+			margin : 0;
+		}
+		%no-pd--#{$namespace} {
+			padding: 0;
+		}
+
+		%no-pd-left--#{$namespace} {
+			padding-left: 0;
+		}
+
+		%no-pd-right--#{$namespace} {
+			padding-right: 0;
+		}
+
+		%no-pd-both--#{$namespace} {
+			padding-right:0;
+			padding-left:0;
+		}
+
+		%no-pd-top--#{$namespace} {
+			padding-top:0;
+		}
+
+		%no-pd-bottom--#{$namespace} {
+			padding-bottom:0;
+		}
+
+		%no-pd-bottom-top--#{$namespace} {
+			padding-top:0;
+			padding-bottom:0;
+		}
+
+	//Margin
+		%no-mg--#{$namespace} {
+			margin: 0;
+		}
+
+		%no-mg-left--#{$namespace} {
+			margin-left: 0;
+		}
+
+		%no-mg-right--#{$namespace} {
+			margin-right: 0;
+		}
+
+		%no-mg-both--#{$namespace} {
+			margin-right:0;
+			margin-left:0;
+		}
+
+		%no-mg-top--#{$namespace} {
+			margin-top:0;
+		}
+
+		%no-mg-bottom--#{$namespace} {
+			margin-bottom:0;
+		}
+
+		%no-mg-bottom-top--#{$namespace} {
+			margin-top:0;
+			margin-bottom:0;
+		}		
+
+	//List
+		%list-style-type-none--#{$namespace} {
+			list-style-type: none;
+		}
+
+	//Clearfix
+		%cf--#{$namespace}:before,
+		%cf--#{$namespace}:after {
+	    content: " ";
+	    display: table;
+		}
+
+		%cf--#{$namespace}:after {
+	    clear: both;
+		}
+
+		@if $namespace == all {
+			%cf--#{$namespace} {
+				.lt-ie8 & {
+					zoom: 1;
+				}
+			}
+		}
+
+	//Own Object
+		%bordered--#{$namespace} {
+			@if $namespace == all {
+				border : 2px solid black;
+			}
+			@elseif $namespace == under480 {
+				border : 4px solid darkgreen;
+			}
+		}
+}
