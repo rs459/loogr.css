@@ -26,7 +26,8 @@
  *	Owner stylesheet
  */
 
-$max-width : 1280px;
+// Uncomment, set max-width if you want a max width, use .main-wrapper on the root element of your content
+//$max-width : 1280px;
 $max-width : 0 !default;
 .main-wrapper {
 	@if $max-width > 0  {
