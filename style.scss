@@ -1,6 +1,6 @@
 	
 
-//	@import "vars.inc";
+	@import "vars.inc";
 	@import "vendor/normalize.inc";
 
 /*
@@ -10,14 +10,14 @@
  	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 
-	@import "respondTo.inc";
-	@import "loopOfGridObject.inc";
+	@import "logobj/respondTo.inc";
+	@import "logobj/loopOfGridObject.inc";
 
 /*
  *	loopOfGridObject without media queries 
  */
 
-@include loopOfGridObject(all);
+	@include loopOfGridObject(all);
 
 /*
  *	Owner stylesheet
@@ -67,4 +67,4 @@ $max-width : 0 !default;
  *  End of owner stylesheet
  */
 	
-	@import "vendor/h5bp-css-print-after.inc";
+	@import "vendor/h5bp-print.inc";

@@ -17,7 +17,7 @@
 
 	  		@for $i from 1 through $gridlength - 1 {
 
-	  			$value : ((100% / $gridlength) * $i)
+	  			$value : ((100% / $gridlength) * $i);
 
 				%pd-left#{$i}of#{$gridlength}--#{$namespace} {
 					padding-left: $value;

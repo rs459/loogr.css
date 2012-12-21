@@ -321,15 +321,6 @@ table {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-a {
-  color: #444444; }
-
-a:visited {
-  color: #444444; }
-
-a:focus, a:hover {
-  color: #b7382a; }
-
 /*
  *	loopOfGridObject without media queries 
  */
