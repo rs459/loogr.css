@@ -1,7 +1,7 @@
 	
 
-	@import "vars.inc";
-	@import "normalize.inc";
+//	@import "vars.inc";
+	@import "vendor/normalize.inc";
 
 /*
  * Start of style
@@ -12,9 +12,6 @@
 
 	@import "respondTo.inc";
 	@import "loopOfGridObject.inc";
-	@import "typo.inc";
-	@import "linkAndButton.inc";
-	@import "form.inc";
 
 /*
  *	loopOfGridObject without media queries 
@@ -70,4 +67,4 @@ $max-width : 0 !default;
  *  End of owner stylesheet
  */
 	
-	@import "h5bp-css-print-after.inc";
+	@import "vendor/h5bp-css-print-after.inc";
