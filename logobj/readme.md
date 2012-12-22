@@ -2,6 +2,9 @@
 
 This framework use : box-sing with border-box. (That's mean it don't support IE > 8)
 
+__You don't have to worry about the large number of grid, only what you use will be in the output,
+thank's to placeholder in SASS 3.2.x .__
+
 You have any grid you want in pourcentage width :
 
 ```scss
