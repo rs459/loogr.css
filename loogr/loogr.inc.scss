@@ -214,12 +214,12 @@
 	//Clearfix
 		%cf--#{$namespace}:before,
 		%cf--#{$namespace}:after {
-	    content: " ";
-	    display: table;
+		    content: " ";
+		    display: table;
 		}
 
 		%cf--#{$namespace}:after {
-	    clear: both;
+	    	clear: both;
 		}
 
 		@if $namespace == all {
