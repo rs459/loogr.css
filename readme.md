@@ -1,33 +1,12 @@
-# Loogr.css
+# Loogr.css #
 
-(Loop of object and grid reusable for CSS).
-----------
-Loogr :
+Loop of object and grid reusable for CSS
 
-With preprocessor it's hard to have a good maintenability for responsive||adaptative web design. One mixin `respond to` was created by Mason Wendell aka [@codingdesigner](htts://twitter.com/codingdesigner).
+------------------------------------------------------
 
-But if you read this [article](http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32), you will find there is still an issue with the final result. To circumvent this problem, loogr use a mixin which takes as argument a namespace, then it generates a large number of placeholder with the name of the namespace at the end `%myObject--namespace. It works as a series of reusable object that you pass to your CSS selectors via the mechanism of @extends.
+### Example :
 
-pro :
-
-- Take full advantage of new feature inside SASS 3.2.x with placeholder capability.
-- Everything will be inside the same @media rules.
-- Your html or your template (i love jade) stay clear. (you can reuse it, project after project).
-- Your add role class or identity class on your html (no non-semantic class like .bordered .float .clearfix).
-- You can mix it with Oocss approach.
-- You don't loose the possibility to use the respond-to mixins.
-- ...
-
-cons :
-
-- Your selector will be appear, in many place inside your stylesheet. (but for big project that's could be acceptable).
-- ...
-
-TODO : write a better documentation with example.
-
-## Example :
-
-#### You create your own mediaqueries.
+##### You create your own mediaqueries.
 
 ```scss
 //#style.scss
@@ -35,12 +14,12 @@ TODO : write a better documentation with example.
 
     }
 ```
-#### You add a namespace for each mediaqueries.
+##### You add a namespace for each mediaqueries.
 
-```
+```scss
 //#style.scss
     @media screen and (max-width: 480px) {
-        $namespace : "under480";  
+        $namespace : "under480";
     }
 
     @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -48,9 +27,9 @@ TODO : write a better documentation with example.
     }
 ```
 
-#### You insert all object inside these mediaqueries and one outside mediaqueries with "all" as argument.
+##### You insert all object inside these mediaqueries and one outside with "all" as argument.
 
-```
+```scss
 //#style.scss
 
     
@@ -77,9 +56,9 @@ TODO : write a better documentation with example.
     }
 ```
 
-#### Style your website and use @extend with placeholder each of them have a namespace.
+##### Style your website and use @extend with placeholder each of them have a namespace.
 
-```
+```scss
 //#style.scss
 
     
@@ -113,9 +92,9 @@ TODO : write a better documentation with example.
     }
 ```
 
-#### Output.
+##### Output.
 
-```
+```css
 //#style.css
     .selector,.selector-two {
         padding : 0;
@@ -139,4 +118,31 @@ TODO : write a better documentation with example.
         }
     }
 ```
-##### You can contact me on Twitter : @rs459
+
+[Look at this page for grid](https://github.com/rs459/loogr.css/blob/master/loogr/readme.md)
+
+### Loogr :
+
+With preprocessor it's hard to have a good maintenability for responsive||adaptative web design. One mixin `respond to` was created by Mason Wendell aka [@codingdesigner](htts://twitter.com/codingdesigner).
+
+But if you read this [article](http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32), you will find there is still an issue with the final result. To circumvent this problem, loogr use a mixin which takes as argument a namespace, then it generates a large number of placeholder with the name of the namespace at the end `%myObject--namespace. It works as a series of reusable object that you pass to your CSS selectors via the mechanism of @extends.
+
+pro :
+
+- Take full advantage of new feature inside SASS 3.2.x with placeholder capability.
+- Everything will be inside the same @media rules.
+- Your html or your template (i love jade) stay clear. (you can reuse it, project after project).
+- Your add role class or identity class on your html (no non-semantic class like .bordered .float .clearfix).
+- You can mix it with Oocss approach.
+- You don't loose the possibility to use the respond-to mixins.
+- ...
+
+cons :
+
+- Your selector will be appear, in many place inside your stylesheet. (but for big project that's could be acceptable).
+- ...
+
+TODO : write a better documentation with example.
+
+
+##### You can contact me on Twitter : [@rs459](htts://twitter.com/rs459)
