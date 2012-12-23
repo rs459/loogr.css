@@ -1,36 +1,6 @@
 # Multi grid system
 
-This framework use : box-sing with border-box. (That's mean it don't support IE > 8)
-
-__You don't have to worry about the large number of grid, only what you use will be in the output,
-thank's to placeholder in SASS 3.2.x .__
-
-You have any grid you want in pourcentage width :
-
-```scss
-
-	...
-
-	@each $gridlength in 48, 40, 32, 24, 20, 16, 12, 10, 8, 6, 5, 4, 3 {
-
-		...
-
-	}
-
-	...
-
-```
-
-you can limit the column count : 
-
-```scss
-	$maxColumnCount : 24;
-```
-Each value over this number will generate only padding and margin for it.
-
-example : you want to have a grid of 24.
-
-	23/24 width + 1/48 margin-left + 1/48 margin-right = 24/24 width
+This framework use : box-sing with border-box. (That's mean it don't support IE < 8)
 
 --------
 ## example :
@@ -120,3 +90,33 @@ output :
     	}
     }
 ```
+
+__You don't have to worry about the large number of grid, only what you use will be in the output,
+thank's to placeholder in SASS 3.2.x .__
+
+You have any grid you want in pourcentage width :
+
+```scss
+
+	...
+
+	@each $gridlength in 48, 40, 32, 24, 20, 16, 12, 10, 8, 6, 5, 4, 3 {
+
+		...
+
+	}
+
+	...
+
+```
+
+you can limit the column count : 
+
+```scss
+	$maxColumnCount : 24;
+```
+Each value over this number will generate only padding and margin for it.
+
+example : you want to have a grid of 24.
+
+	23/24 width + 1/48 margin-left + 1/48 margin-right = 24/24 width
