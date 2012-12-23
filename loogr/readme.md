@@ -22,15 +22,20 @@ This framework use : box-sing with border-box. (That's mean it don't support IE 
 ```scss
 	.main-section {
 		@extend %float-left--all;
-		@extend %w8of12--all;
 		@extend %mg-right1of12--all;
+		@extend %w8of12--all;
+
+		@extend %no-mg-right--under480;
 		@extend %w12of12--under480;
+
+		@extend %no-mg-right--min480-max768;		
 		@extend %w3of4--min480-max768;
 	}
 
 	.main-aside {
 		@extend %float-left--all;
 		@extend %w3of12--all;
+
 		@extend %w12of12--under480;
 		@extend %w1of4--min480-max768;
 	}
@@ -75,20 +80,31 @@ output :
 	}
 
 	@media screen and (max-width: 480px) {
-  		.main-section, .main-aside {
-    		width: 100%; 
-    	}
-    }
+		
+		.main-section, .main-aside {
+			width: 100%; 
+		}
+
+		.main-section {
+			margin-right: 0; 
+		} 
+	}
 
 	@media screen and (min-width: 481px) and (max-width: 768px) {
-  		.main-aside {
-    		width: 25%; 
-    	}
+	  
+		.main-aside {
+	    	width: 25%; 
+	    }
 
-  		.main-section {
-    		width: 75%; 
-    	}
-    }
+		.main-section {
+			width: 75%; 
+		}
+
+		.main-section {
+			margin-right: 0; 
+		} 
+	}
+
 ```
 
 __You don't have to worry about the large number of grid, only what you use will be in the output,

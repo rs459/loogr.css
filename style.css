@@ -342,6 +342,9 @@ table {
 /*
  * Loogr mediaqueries object.	
  */
+/*
+ * Media print (h5bp)
+ */
 @media print {
   * {
     background: transparent !important;

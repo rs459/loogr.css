@@ -32,7 +32,7 @@
 				}
 
 				%mg-right#{$i}of#{$gridlength}--#{$namespace} {
-					margin-left: $value;
+					margin-right: $value;
 				}				
 			}	
 		}
