@@ -8,7 +8,9 @@
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  // Don't show links for images, or javascript/internal links
+  // TODO :  refactoring needed
+  // .ir a:after, 
+  a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  // Don't show links for images, or javascript/internal links
   pre, blockquote { border: 1px solid $pre-and-blockquote-print-border-color; page-break-inside: avoid; }
   thead { display: table-header-group; } // h5bp.com/t
   tr, img { page-break-inside: avoid; }

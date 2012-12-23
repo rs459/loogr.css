@@ -1,4 +1,4 @@
-@mixin loopOfGridObject($namespace) {
+@mixin loogr($namespace) {
 	//LoopOfGrid
 	// $maxColumnCount 
 	// 		Limit the length of grid column, using number over this value, generate only padding and margin
@@ -230,13 +230,13 @@
 			}
 		}
 
-	//Own Object
-		%bordered--#{$namespace} {
-			@if $namespace == all {
-				border : 2px solid black;
-			}
-			@elseif $namespace == under480 {
-				border : 4px solid darkgreen;
-			}
-		}
+	// //Own Object
+	// 	%bordered--#{$namespace} {
+	// 		@if $namespace == all {
+	// 			border : 2px solid black;
+	// 		}
+	// 		@elseif $namespace == under480 {
+	// 			border : 4px solid darkgreen;
+	// 		}
+	// 	}
 }

@@ -313,16 +313,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/*
- * Start of style
- */
+/* normalize end */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-/*
- *	loopOfGridObject without media queries 
+/*  loogr without media queries
+ *  each object will be here
  */
 .container:before,
 .container:after {
@@ -336,13 +334,13 @@ table {
   zoom: 1; }
 
 /*
- *	Owner stylesheet
+ *  non-object style
  */
+.e {
+  width: 280px; }
+
 /*
- *	Result of loopOfGridObject
- */
-/*
- *  End of owner stylesheet
+ * Loogr mediaqueries object.	
  */
 @media print {
   * {
@@ -362,7 +360,7 @@ table {
   abbr[title]:after {
     content: " (" attr(title) ")"; }
 
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+  a[href^="javascript:"]:after, a[href^="#"]:after {
     content: ""; }
 
   pre, blockquote {

@@ -2,69 +2,71 @@
 
 	@import "vars.inc";
 	@import "vendor/normalize.inc";
+	@import "loogr/respondTo.inc";
+	@import "loogr/loogr.inc";
 
-/*
- * Start of style
- */
 
  	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-
-	@import "logobj/respondTo.inc";
-	@import "logobj/loopOfGridObject.inc";
-
-/*
- *	loopOfGridObject without media queries 
+/*  loogr without media queries
+ *  each object will be here
  */
-
-	@include loopOfGridObject(all);
+	@include loogr(all);
 
 /*
- *	Owner stylesheet
+ *  non-object style
  */
 
 // Uncomment, set max-width if you want a max width, use .main-wrapper on the root element of your content
 //$max-width : 1280px;
-$max-width : 0 !default;
-.main-wrapper {
-	@if $max-width > 0  {
-		max-width : $max-width;
+
+
+	$max-width : 0 !default;
+	.main-wrapper {
+		@if $max-width > 0  {
+			max-width : $max-width;
+		}
 	}
-}
 
-.container,%container {
+	.container,%container {
 
-	@extend %cf--all;
-}
+		@extend %cf--all;
+	}
+
+	.e {
+		width : 280px;
+	}
 
 /*
- *	Result of loopOfGridObject
+ * Loogr mediaqueries object.	
  */
+
 	@media screen and (max-width: 480px) {
 		$namespace : "under480";  
 	  		
-	  		@include loopOfGridObject($namespace);
+	  		@include loogr($namespace);
 	}
 
 	@media screen and (min-width: 481px) and (max-width: 768px) {
 		$namespace : "min480-max768";
 
-			@include loopOfGridObject($namespace);
+			@include loogr($namespace);
 	}
 
 	@media screen and (min-width: 769px) and (max-width: 1024px) {
 		$namespace : "min768-max1024";
 
-			@include loopOfGridObject($namespace);
+			@include loogr($namespace);
 	}
 
 	@media screen and (min-width: 1025px) {
 		$namespace : "over1024";
 
-			@include loopOfGridObject($namespace);
+			@include loogr($namespace);
 	}
+
 /*
- *  End of owner stylesheet
+ * Media print (h5bp)
  */
 	
 	@import "vendor/h5bp-print.inc";
