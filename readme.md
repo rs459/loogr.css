@@ -4,9 +4,9 @@
 ----------
 Loogr :
 
-With preprocessor it's hard to have a good maintenability for responsive||adaptative web design. One mixin respond to was created by Mason Wendell aka @codingdesigner.
+With preprocessor it's hard to have a good maintenability for responsive||adaptative web design. One mixin `respond to` was created by Mason Wendell aka [@codingdesigner](htts://twitter.com/codingdesigner).
 
-But if you read this (article), you will find there is still an issue with the final result. To circumvent this problem, loogr use a mixin which takes as argument a namespace, then it generates a large number of placeholder with the name of the namespace at the end %myObject--namespace. It works as a series of reusable object that you pass to your CSS selectors via the mechanism of @extends.
+But if you read this [article](http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32), you will find there is still an issue with the final result. To circumvent this problem, loogr use a mixin which takes as argument a namespace, then it generates a large number of placeholder with the name of the namespace at the end `%myObject--namespace`. It works as a series of reusable object that you pass to your CSS selectors via the mechanism of @extends.
 
 pro :
 
