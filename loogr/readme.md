@@ -37,6 +37,7 @@ This framework use : box-sing with border-box. (That's mean it don't support IE 
 		@extend %w3of12--all;
 
 		@extend %w12of12--under480;
+		
 		@extend %w1of4--min480-max768;
 	}
 ```
