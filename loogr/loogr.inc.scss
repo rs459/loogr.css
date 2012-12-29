@@ -7,7 +7,7 @@
 
 		@each $gridlength in 48, 40, 32, 24, 20, 16, 12, 10, 8, 6, 5, 4, 3 {
 			//GRID generator
-			@if $gridlength < $maxColumnCount {
+			@if $gridlength <= $maxColumnCount {
 				@for $i from 1 through $gridlength {
 					%w#{$i}of#{$gridlength}--#{$namespace} {
 						width: ((100% / $gridlength) * $i);

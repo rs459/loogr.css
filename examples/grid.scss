@@ -1,0 +1,133 @@
+	
+	@import "../vars.inc";
+	@import "../vendor/normalize.inc";
+	@import "../loogr/loogr.inc";
+
+
+ 	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/*  
+ *	loogr without media queries
+ *  each object will be here
+ */
+	@include loogr(all);
+
+// Uncomment, set max-width if you want a max width, 
+// use .main-wrapper on the root element of your content
+$max-width : 1280px;
+
+
+	$max-width : 0 !default;
+	.main-wrapper {
+		@if $max-width > 0  {
+			max-width : $max-width;
+		}
+		margin : 0 auto;
+	}
+
+	.container,%container {
+
+		@extend %cf--all;
+	}
+
+	.main-header,.main-section,.main-aside,.main-footer {
+		padding : 5em 0;
+		@extend %text-align-center--all;
+	}
+
+	.main-header {
+		background: #6d9db7;
+	}
+
+	.main-section {
+		background: #ddc;
+
+		@extend %w11of16--all;
+		@extend %mg-right1of16--all;
+		@extend %float-left--all;
+
+
+		@extend %w16of16--under480;
+		@extend %no-mg-right--under480;
+	}
+
+	.one, .two {
+		padding : 2em 0;
+		border : 1px solid #ccc;
+	}
+
+	.one {
+
+		@extend %display-inline-block--all;
+		@extend %w1of6--all;
+
+		@extend %w2of4--under480;
+
+		@extend %w2of6--min480-max768;
+
+		@extend %w3of12--min768-max1024;
+
+		@extend %w1of6--over1024;
+	}	
+
+	.two {
+
+		@extend %display-inline-block--all;
+		@extend %w1of12--all;
+
+		@extend %w16of16--under480;
+
+		@extend %w1of4--min480-max768;
+
+		@extend %w4of12--min768-max1024;
+
+		@extend %w1of12--over1024;
+	}
+
+	.main-aside {
+		background: #de1;
+
+		@extend %w4of16--all;
+		@extend %float-left--all;
+
+
+		@extend %w16of16--under480;
+	}
+
+	.main-footer {
+		background: #aaa;
+	}
+
+/*
+ * Loogr mediaqueries object.	
+ */
+
+	@media screen and (max-width: 480px) {
+		$namespace : "under480";  
+	  		
+	  		@include loogr($namespace);
+	}
+
+	@media screen and (min-width: 481px) and (max-width: 768px) {
+		$namespace : "min480-max768";
+
+			@include loogr($namespace);
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1024px) {
+		$namespace : "min768-max1024";
+
+			@include loogr($namespace);
+	}
+
+	@media screen and (min-width: 1025px) {
+		$namespace : "over1024";
+
+			@include loogr($namespace);
+	}
+
+/*
+ * Media print (h5bp)
+ */
+	
+	@import "../vendor/h5bp-print.inc";
