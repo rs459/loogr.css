@@ -33,10 +33,6 @@
 		@extend %cf--all;
 	}
 
-	.e {
-		width : 280px;
-	}
-
 /*
  * Loogr mediaqueries object.	
  */
@@ -57,8 +53,6 @@
 		$namespace : "min768-max1024";
 
 			@include loogr($namespace);
-			@include giveMeGrid(3,$namespace);
-			@include marginPaddingGrid(6,$namespace);
 	}
 
 	@media screen and (min-width: 1025px) {
