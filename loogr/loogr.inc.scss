@@ -9,7 +9,7 @@
 			//GRID generator
 			@if $gridlength <= $maxColumnCount {
 				@for $i from 1 through $gridlength {
-					%w#{$i}of#{$gridlength}--#{$namespace} {
+					%w#{$i}-#{$gridlength}--#{$namespace} {
 						width: ((100% / $gridlength) * $i);
 					}
 		 		}
@@ -19,19 +19,19 @@
 
 	  			$value : ((100% / $gridlength) * $i);
 
-				%pd-left#{$i}of#{$gridlength}--#{$namespace} {
+				%pd-left#{$i}-#{$gridlength}--#{$namespace} {
 					padding-left: $value;
 				}
 
-				%pd-right#{$i}of#{$gridlength}--#{$namespace} {
+				%pd-right#{$i}-#{$gridlength}--#{$namespace} {
 					padding-right: $value;
 				}
 
-				%mg-left#{$i}of#{$gridlength}--#{$namespace} {
+				%mg-left#{$i}-#{$gridlength}--#{$namespace} {
 					margin-left: $value;
 				}
 
-				%mg-right#{$i}of#{$gridlength}--#{$namespace} {
+				%mg-right#{$i}-#{$gridlength}--#{$namespace} {
 					margin-right: $value;
 				}				
 			}	
@@ -239,4 +239,34 @@
 	// 			border : 4px solid darkgreen;
 	// 		}
 	// 	}
+}
+
+@mixin givemeagrid($numberOfcolumn,$namespace) {
+	@for $i from 1 through $numberOfcolumn {
+		.w#{$i}-#{$numberOfcolumn}--#{$namespace} {
+			@extend %w#{$i}-#{$numberOfcolumn}--#{$namespace}; 
+		}
+	}
+
+	@for $i from 1 through $numberOfcolumn - 1 {
+		.pd-left#{$i}-#{$numberOfcolumn}--#{$namespace} {
+
+			@extend %pd-left#{$i}-#{$numberOfcolumn}--#{$namespace}
+		}
+
+		.pd-right#{$i}-#{$numberOfcolumn}--#{$namespace} {
+
+			@extend %pd-right#{$i}-#{$numberOfcolumn}--#{$namespace}
+		}
+
+		.mg-left#{$i}-#{$numberOfcolumn}--#{$namespace} {
+
+			@extend %mg-left#{$i}-#{$numberOfcolumn}--#{$namespace}
+		}
+
+		.mg-right#{$i}-#{$numberOfcolumn}--#{$namespace} {
+
+			@extend %mg-right#{$i}-#{$numberOfcolumn}--#{$namespace}
+		}
+	}
 }

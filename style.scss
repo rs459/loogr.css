@@ -57,6 +57,7 @@
 		$namespace : "min768-max1024";
 
 			@include loogr($namespace);
+			@include givemeagrid(3,$namespace);
 	}
 
 	@media screen and (min-width: 1025px) {
