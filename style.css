@@ -343,6 +343,66 @@ table {
  * Loogr mediaqueries object.	
  */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  .pd-left1-6--min768-max1024 {
+    padding-left: 16.66667%; }
+
+  .pd-right1-6--min768-max1024 {
+    padding-right: 16.66667%; }
+
+  .mg-left1-6--min768-max1024 {
+    margin-left: 16.66667%; }
+
+  .mg-right1-6--min768-max1024 {
+    margin-right: 16.66667%; }
+
+  .pd-left2-6--min768-max1024 {
+    padding-left: 33.33333%; }
+
+  .pd-right2-6--min768-max1024 {
+    padding-right: 33.33333%; }
+
+  .mg-left2-6--min768-max1024 {
+    margin-left: 33.33333%; }
+
+  .mg-right2-6--min768-max1024 {
+    margin-right: 33.33333%; }
+
+  .pd-left3-6--min768-max1024 {
+    padding-left: 50%; }
+
+  .pd-right3-6--min768-max1024 {
+    padding-right: 50%; }
+
+  .mg-left3-6--min768-max1024 {
+    margin-left: 50%; }
+
+  .mg-right3-6--min768-max1024 {
+    margin-right: 50%; }
+
+  .pd-left4-6--min768-max1024 {
+    padding-left: 66.66667%; }
+
+  .pd-right4-6--min768-max1024 {
+    padding-right: 66.66667%; }
+
+  .mg-left4-6--min768-max1024 {
+    margin-left: 66.66667%; }
+
+  .mg-right4-6--min768-max1024 {
+    margin-right: 66.66667%; }
+
+  .pd-left5-6--min768-max1024 {
+    padding-left: 83.33333%; }
+
+  .pd-right5-6--min768-max1024 {
+    padding-right: 83.33333%; }
+
+  .mg-left5-6--min768-max1024 {
+    margin-left: 83.33333%; }
+
+  .mg-right5-6--min768-max1024 {
+    margin-right: 83.33333%; }
+
   .w1-3--min768-max1024 {
     width: 33.33333%; }
 

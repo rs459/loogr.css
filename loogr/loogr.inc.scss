@@ -241,13 +241,36 @@
 	// 	}
 }
 
-@mixin givemeagrid($numberOfcolumn,$namespace) {
+@mixin giveMeGrid($numberOfcolumn,$namespace) {
 	@for $i from 1 through $numberOfcolumn {
 		.w#{$i}-#{$numberOfcolumn}--#{$namespace} {
 			@extend %w#{$i}-#{$numberOfcolumn}--#{$namespace}; 
 		}
 	}
 
+	@for $i from 1 through $numberOfcolumn - 1 {
+		.pd-left#{$i}-#{$numberOfcolumn}--#{$namespace} {
+
+			@extend %pd-left#{$i}-#{$numberOfcolumn}--#{$namespace}
+		}
+
+		.pd-right#{$i}-#{$numberOfcolumn}--#{$namespace} {
+
+			@extend %pd-right#{$i}-#{$numberOfcolumn}--#{$namespace}
+		}
+
+		.mg-left#{$i}-#{$numberOfcolumn}--#{$namespace} {
+
+			@extend %mg-left#{$i}-#{$numberOfcolumn}--#{$namespace}
+		}
+
+		.mg-right#{$i}-#{$numberOfcolumn}--#{$namespace} {
+
+			@extend %mg-right#{$i}-#{$numberOfcolumn}--#{$namespace}
+		}
+	}
+}
+@mixin marginPaddingGrid($numberOfcolumn,$namespace) {
 	@for $i from 1 through $numberOfcolumn - 1 {
 		.pd-left#{$i}-#{$numberOfcolumn}--#{$namespace} {
 
