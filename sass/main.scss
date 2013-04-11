@@ -1,0 +1,68 @@
+	
+
+	@import "vars.inc";
+	@import "vendor/normalize.inc";
+	@import "loogr/respondTo.inc";
+	@import "loogr/loogr.inc";
+
+
+ 	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/*  loogr without media queries
+ *  each object will be here
+ */
+	@include loogr(all);
+
+/*
+ *  non-object style
+ */
+
+// Uncomment, set max-width if you want a max width, use .main-wrapper on the root element of your content
+//$max-width : 1280px;
+
+
+	$max-width : 0 !default;
+	.main-wrapper {
+		@if $max-width > 0  {
+			max-width : $max-width;
+		}
+	}
+
+	.container,%container {
+
+		@extend %cf--all;
+	}
+
+/*
+ * Loogr mediaqueries object.	
+ */
+
+	@media screen and (max-width: 480px) {
+		$namespace : "under480";  
+	  		
+	  		@include loogr($namespace);
+	}
+
+	@media screen and (min-width: 481px) and (max-width: 768px) {
+		$namespace : "min480-max768";
+
+			@include loogr($namespace);
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1024px) {
+		$namespace : "min768-max1024";
+
+			@include loogr($namespace);
+	}
+
+	@media screen and (min-width: 1025px) {
+		$namespace : "over1024";
+
+			@include loogr($namespace);
+	}
+
+/*
+ * Media print (h5bp)
+ */
+	
+	@import "vendor/h5bp-print.inc";
